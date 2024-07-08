@@ -11,8 +11,8 @@ pkgs.writeScriptBin "minecraft-dmenu"
         if ($versionName == "") { print "no input" ; exit }
         let minecraftVersions = [ ${(builtins.toString minecraft-versions)} ]
         mut version = ""
-        mut x = 1
-        while $x <= ($minecraftVersionsNames | length) { 
+        mut x = 0
+        while $x < ($minecraftVersionsNames | length) { 
           if $versionName == ($minecraftVersionsNames | get $x) { 
             $version = ($minecraftVersions | get $x)
             break
